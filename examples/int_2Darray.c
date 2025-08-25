@@ -13,6 +13,7 @@ int main(int argc, char const *argv[])
     for(int i = 0; i < 3; i++) {
         int* subarr = NULL;
         char buf[255];
+
         scanf("%[^\n]s", buf);
         char* tok = strtok(buf, " ");
         while(tok != NULL) {
@@ -20,7 +21,14 @@ int main(int argc, char const *argv[])
             arrpush(subarr, val);
             tok = strtok(NULL, " ");
         }
+
+        if( strlen(buf) == 0 || subarr == NULL ) {
+            // make empty subarray if user input is empty line
+            arrpush(subarr, 0); 
+            arrpop(subarr);
+        }
         arrpush(arr, subarr);
+        buf[0] = '\0';
         getchar();
     }
 
