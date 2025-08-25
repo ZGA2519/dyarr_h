@@ -27,12 +27,6 @@ int main(int argc, char const *argv[])
             arrpush(subarr, 0); 
             arrpop(subarr);
         }
-
-        if( strlen(buf) == 0 || subarr == NULL ) {
-            // make empty subarray if user input is empty line
-            arrpush(subarr, 0); 
-            arrpop(subarr);
-        }
         arrpush(arr, subarr);
         buf[0] = '\0';
         getchar();
