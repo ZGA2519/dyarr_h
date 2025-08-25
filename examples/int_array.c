@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <dyarr.h>
+#include "../dyarr.h"
 
 int main()
 {

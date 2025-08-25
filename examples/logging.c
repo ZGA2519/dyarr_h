@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <logging.h>
+#include "../logging.h"
 
 int main()
 {
