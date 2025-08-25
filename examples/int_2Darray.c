@@ -15,11 +15,17 @@ int main(int argc, char const *argv[])
         char buf[255];
 
         scanf("%[^\n]s", buf);
-        char* tok = strtok(buf, " ");
+        char* tok = strtok(buf, " \t");
         while(tok != NULL) {
             int val = atoi(tok); // assime user input is valid integer
             arrpush(subarr, val);
-            tok = strtok(NULL, " ");
+            tok = strtok(NULL, " \t");
+        }
+
+        if( strlen(buf) == 0 || subarr == NULL ) {
+            // make empty subarray if user input is empty line
+            arrpush(subarr, 0); 
+            arrpop(subarr);
         }
 
         if( strlen(buf) == 0 || subarr == NULL ) {
