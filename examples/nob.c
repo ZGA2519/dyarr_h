@@ -23,4 +23,12 @@ int main(int argc, char **argv) {
         "int_array.c");
     if (!cmd_run(&cmd)) return 1;
 
+    cmd_append(&cmd, 
+        "cc",
+        "-Wall", "-Wextra",
+        "-I..",
+        "-o", BUILD_FOLDER"logging",
+        "logging.c");
+    if (!cmd_run(&cmd)) return 1;
+
 }
